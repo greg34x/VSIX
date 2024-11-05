@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable">
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+
+	<Commands package="guidVSIXPackagePkg">
+
+		<Groups>
+			<Group guid="guidVSIXPackageCmdSet" id="ButtonGroup" priority="0x0600">
+				<Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
+			</Group>
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidVSIXPackageCmdSet" id="MyCommandId" priority="0x0100" type="Button">
+				<Parent guid="guidVSIXPackageCmdSet" id="ButtonGroup" />
+				<Strings>
+					<CommandName>MyCommandId</CommandName>
+					<ButtonText>MyShortcut</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+	</Commands>
+
+	<KeyBindings>
+		<KeyBinding guid="guidVSIXPackageCmdSet" id="MyCommandId" editor="guidVSStd97" mod1="Control" key1="W" />
+	</KeyBindings>
+
+	<Symbols>
+		<!-- Define a unique GUID for your command set -->
+		<GuidSymbol name="guidVSIXPackagePkg" value="{908f5230-d345-4ee5-a854-d9397bfa6ede}" />
+		<GuidSymbol name="guidVSIXPackageCmdSet" value="{d858b0de-b9fa-49e8-a7ae-e080d04a78be}">
+			<IDSymbol name="ButtonGroup" value="0x1020" />
+			<IDSymbol name="MyCommandId" value="0x0100"/>
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
